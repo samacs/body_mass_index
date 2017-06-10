@@ -1,0 +1,30 @@
+<nav class="navigation navbar navbar-fixed-top sidebar-right">
+  <div class="container">
+    <div class="navbar-header">
+      <%= button_tag type: 'button', class: 'navbar-toggle' do %>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      <% end %>
+      <%= link_to '#main', class: 'navbar-brand' do %>
+        <%= image_tag 'logo-icon.png', alt: 'BMI', class: 'logo' %>
+      <% end %>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <%= link_to '#main', class: 'sidebar-brand' do %>
+        <%= image_tag 'logo.png', alt: 'BMI', class: 'logo' %>
+      <% end %>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="<%= cp(root_path) %>"><%= link_to 'Home', root_path, target: '_self' %></li>
+        <% if logged_in? %>
+          <li class="<%= cp(bmi_path) %>"><%= link_to 'Calculate your BMI', bmi_path, target: '_self' %></li>
+          <li><%= link_to 'Logout', logout_path, target: '_self' %></li>
+        <% else %>
+          <li class="<%= cp(signup_path) %>"><%= link_to 'Sign up', signup_path, target: '_self' %></li>
+          <li class="<%= cp(login_path) %>"><%= link_to 'Log in', login_path, target: '_self' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

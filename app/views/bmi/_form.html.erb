@@ -1,12 +1,13 @@
 <%= form_tag bmi_path do %>
-  <%= label_tag :weight, t('views.bmi.form.label.weight') %>
-  <%= number_field_tag :weight, number_with_precision(@weight, precision: 2), step: '0.01' %>
-  <br />
-  <%= label_tag :height, t('views.bmi.form.label.height') %>
-  <%= number_field_tag :height, number_with_precision(@height, precision: 2), step: '0.01' %>
-  <br />
+  <div class="form-group control control-material">
+    <%= number_field_tag :weight, number_with_precision(@weight, precision: 2), step: '0.01', class: 'form-control' %>
+    <%= label_tag :weight, t('views.bmi.form.label.weight'), class: 'control-label' %>
+  </div>
+  <div class="form-group control control-material">
+    <%= number_field_tag :height, number_with_precision(@height, precision: 2), step: '0.01', class: 'form-control' %>
+    <%= label_tag :height, t('views.bmi.form.label.height'), class: 'control-label' %>
+  </div>
   <%= label_tag :imperial, t('views.bmi.form.label.imperial') %>
-  <%= check_box_tag 'imperial', 'yes', @imperial %>
-  <br />
-  <%= submit_tag 'Calculate BMI' %>
+  <%= check_box_tag 'imperial', 'yes', @imperial %> <%=  %>
+  <%= submit_tag 'Calculate BMI', class: 'btn btn-rounded btn-ghost-1', data: { 'loading-text': 'Wait...' } %>
 <% end %>
