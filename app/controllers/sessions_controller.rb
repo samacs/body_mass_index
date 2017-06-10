@@ -10,9 +10,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: session_params[:email])
     if @user.present? && @user.authenticate(session_params[:password])
       login(@user)
-      where_to_go = session[:referer] || root_path
-
-      redirect_to where_to_go
+      redirect_to_previous
     else
       if @user.present?
         flash.now[:error] = I18n.t('views.sessions.create.error.wrong_password')

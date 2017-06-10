@@ -11,5 +11,6 @@
   <body>
     <%= render 'shared/flash_messages' %>
     <%= yield %>
+    <%= content_for(:inline_javascript) %>
   </body>
 </html>
