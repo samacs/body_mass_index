@@ -15,12 +15,9 @@ class User < ApplicationRecord
               message: I18n.t('activemodel.errors.messages.invalid_email_address')
             }
   validates :password,
-            presence: true,
             length: {
               minimum: 6
-            },
-            confirmation: true,
-            if: :changing_password?
+            }
 
   before_save :downcase_email!
 
