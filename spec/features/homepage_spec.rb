@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature 'Homepage' do
   scenario 'An anonymous user goes to the home page' do
     visit '/'

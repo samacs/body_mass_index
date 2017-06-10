@@ -30,4 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  views:
+    users:
+      create:
+        success: 'Welcome! You can now log in'
+    sessions:
+      create:
+        error:
+          wrong_password: 'Wrong password'
+          user_not_found: 'User not found'
