@@ -31,7 +31,7 @@ module RedirectionManagement
   private
 
   def save_current_url
-    return unless request.get?
+    logger.debug request.original_url
     session[:previous_url] = request.original_url
   end
 end

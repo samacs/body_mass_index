@@ -1,1 +1,7 @@
 <h1>Welcome to BMI calculator</h1>
+<% if current_user %>
+  <%= render 'bmi/form' %>
+<% else %>
+  <h3>Please log in to calculate your BMI</h3>
+  <%= render 'sessions/form'  %>
+<% end %>

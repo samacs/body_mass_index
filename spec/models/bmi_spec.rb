@@ -48,4 +48,14 @@ describe BMI, type: :model do
       expect(bmi.category).to eq(options[:category])
     end
   end
+
+  it 'should fail if height is zero' do
+    options = { weight: 60, height: 0 }
+    expect { BMI.new(options) }.to raise_error(ArgumentError)
+  end
+
+  it 'should fail if weight is zero' do
+    options = { weight: 0, height: 1.80 }
+    expect { BMI.new(options).to raise_error(ArgumentError) }
+  end
 end

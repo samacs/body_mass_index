@@ -20,7 +20,9 @@ module SessionsHelper
   end
 
   def require_user
-    redirect_to login_path unless logged_in?
+    return if logged_in?
+    flash[:notice] = 'You need to log in first'
+    redirect_to login_path
   end
 
   def require_no_user
