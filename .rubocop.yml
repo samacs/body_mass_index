@@ -1,0 +1,44 @@
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/MethodLength:
+  Max: 18
+
+Rails:
+  Enabled: true
+
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'spec/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/ModuleLength:
+  Max: 120
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - 'lib/**/*'
+    - 'config/**/*'
+    - 'app/channels/**/*'
+
+Style/SignalException:
+  EnforcedStyle: semantic
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
