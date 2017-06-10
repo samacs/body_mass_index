@@ -1,7 +1,26 @@
-<h1>Welcome to BMI calculator</h1>
-<% if current_user %>
-  <%= render 'bmi/form' %>
+<h1 class="font-xl bold">Welcome to BMI calculator</h1>
+<% if logged_in? %>
+  <p class="block regular font-regular text-uppercase">
+    Enter your information to calculate your BMI
+  </p>
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <%= render 'bmi/form' %>
+    </div>
+  </div>
 <% else %>
-  <h3>Please log in to calculate your BMI</h3>
-  <%= render 'sessions/form'  %>
+  <p class="block regular font-regular text-uppercase">
+    Please log in to calculate your BMI
+  </p>
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <%= render 'sessions/form'  %>
+    </div>
+  </div>
+  <div class="region">
+    <%= link_to signup_path, class: 'btn btn-ghost inline' do %>
+      <i class="icon fa-info"></i>
+      Don't have an account? Sign up now!
+    <% end %>
+  </div>
 <% end %>

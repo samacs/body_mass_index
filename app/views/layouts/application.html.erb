@@ -2,15 +2,27 @@
 <html>
   <head>
     <title>BodyMassIndex</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/meta' %>
+    <%= render 'layouts/favicon' %>
+    <%= render 'layouts/stylesheets' %>
+    <%= javascript_include_tag 'modernizr-2.8.3.min' %>
   </head>
-
   <body>
-    <%= render 'shared/flash_messages' %>
-    <%= yield %>
-    <%= content_for(:inline_javascript) %>
+    <%= render 'layouts/loader' %>
+    <%= render 'layouts/navigation' %>
+    <main>
+      <header id="particles" class="landing-heading fss color-1 overlay overlay-3 alpha-8 image-cover parallax">
+        <div id="fss" class="canvas"></div>
+        <div class="container center-content">
+          <div class="content-inner text-center">
+            <% if flash %>
+              <%= render 'shared/flash_messages' %>
+            <% end %>
+            <%= yield %>
+          </div>
+        </div>
+      </header>
+    </main>
+    <%= render 'layouts/javascripts' %>
   </body>
 </html>

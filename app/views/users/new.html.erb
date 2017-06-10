@@ -1,16 +1,7 @@
-<h3>Sign up</h3>
-<%= form_for @user, url: signup_path do |f| %>
-  <%= f.label :name, t('user.new.name') %>
-  <%= f.text_field :name %>
-  <br />
-  <%= f.label :email, t('user.new.email') %>
-  <%= f.email_field :email %>
-  <br />
-  <%= f.label :password, t('user.new.password') %>
-  <%= f.password_field :password %>
-  <br />
-  <%= f.label :password_confirmation, t('user.new.password_confirmation') %>
-  <%= f.password_field :password_confirmation %>
-  <br />
-  <%= f.submit 'Sign up', data: { disable_with: 'Wait...' } %>
-<% end %>
+<h1 class="font-xl bold">Sign up</h1>
+<p class="block regular font-regular text-uppercase">
+  Please enter your information to register your account
+</p>
+<div class="col-md-12">
+  <%= render 'form' %>
+</div>

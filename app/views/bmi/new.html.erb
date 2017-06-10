@@ -1,6 +1,16 @@
-<%= render 'form' %>
-<% if @bmi %>
-  BMI: <%= @bmi %>
-  <br />
-  Category: <%= @category %>
-<% end %>
+<h1 class="font-xl bold">Calculate your BMI</h1>
+<div class="row">
+  <div class="col-md-12">
+    <% if @bmi %>
+      <div class="counter">
+        <h3 class="font-xl bold" id="bmi-score">
+          <span class="value font-xl"><%= @bmi %></span>
+        </h3>
+      </div>
+      <p class="block regular font-regular text-uppercase">
+        <span id="bmi-category"><%= @category %></span>
+      </p>
+    <% end %>
+    <%= render 'form' %>
+  </div>
+</div>

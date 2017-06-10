@@ -46,7 +46,7 @@ RSpec.feature 'Signup page' do
       fill_in 'user[password]', with: 'somepass'
       fill_in 'user[password_confirmation]', with: ''
 
-      expect { click_button }.not_to change { User.count }
+      expect { click_button('Sign up') }.not_to change { User.count }
 
       expect(page).to have_content('Password confirmation doesn\'t match Password')
     end
